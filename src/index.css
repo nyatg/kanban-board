@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+html {
+  font-size: 1.5rem;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+.App{
+  height: 100vh;
+  width: 100%;
+  margin: auto; 
+  background-color: rgb(227, 227, 219);
+}
+
+header {
+width: 100%;
+color: rgb(204, 210, 215);
+background-color: rgb(70, 70, 70);
+}
+
+main {
+  display: flex;
+}
+
+.Columns{
+  margin-top: 2rem;
+  border: solid 1px;
+  flex: 1;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Tasks {
+  border: solid 10px green;
+  height: 80vh;
+  overflow: scroll;
+}
+
+.singleTask {
+  border: solid;
+  width: 30vw;
+  padding: 10px;
+}
+
+.datePara{
+  color: rgb(151, 147, 147);
+}
