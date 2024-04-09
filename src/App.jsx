@@ -1,6 +1,6 @@
-import Header from './Header';
+import Header from './Header.jsx';
 // Varför blir det rött i importen?
-import Columns from './Columns';
+import Columns from './Columns.jsx';
 import { useState } from 'react';
 
 function App() {
@@ -30,17 +30,10 @@ function App() {
           title="To do"
           index={0}
           tasks={todoTasks}
-          // onDragOver={?};
-          onDrop={handleDrop}
-          onDragstart={handleDragStart}
-  
         />
         <Columns
           title="In progress"
           index={1}
-          tasks={inProgressTasks}
-          onDrop={handleDrop}
-          onDragstart={handleDragStart}
         />
         <Columns
           title="Done"

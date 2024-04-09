@@ -8,7 +8,6 @@ const Columns = ({title, index, tasks: columnTasks, onDragOver, onDrop}) => {
     const [taskTitle, setTaskTitle] = useState('');
     const [hasFetchedTasks, setHasFetchedTasks] = useState(false);
 
-
     useEffect(() => {
         if (!hasFetchedTasks && index === 0) {
             const savedTasks = JSON.parse(localStorage.getItem('tasks'));
@@ -24,7 +23,7 @@ const Columns = ({title, index, tasks: columnTasks, onDragOver, onDrop}) => {
         console.log(task);
 
         //id för varje task
-        const taskId = tasks.length;
+        const taskId = tasks.length > 0 ? tasks[tasks.length -1].id +1 : 0;
 
         const newTask = { id: taskId, task: task };
 
