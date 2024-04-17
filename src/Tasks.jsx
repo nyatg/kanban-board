@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Columns from './Columns';
 
-const Tasks = ({tasks, dltTask}) => {
-
+const Tasks = ({columnTasks, dltTask, onDragStart}) => {
     return (
         <div className='Tasks'>
-            {tasks.map((task) => (
+            {columnTasks.map((task) => (
                 <div className='singleTask'
                     key={task.id}
                     draggable="true"

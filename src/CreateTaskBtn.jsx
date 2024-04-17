@@ -1,10 +1,22 @@
 import { useState } from 'react';
 
-const CreateTaskBtn = ({onAddTask, taskTitle, setTaskTitle}) => {
-    
+const CreateTaskBtn = ({ setAllTasks, allTasks}) => {
+    const [taskTitle, setTaskTitle] = useState('');
     const [showInput, setShowInput] = useState(false);
   
+    const addTask = (task) => {
+        console.log(task);
 
+        //id för varje task
+        const taskId = allTasks.length > 0 ? allTasks[allTasks.length - 1].id + 1 : 0;
+
+        const newTask = { id: taskId, task: task, columnIndex: 0 };
+
+        const updatedTasks = [...allTasks, newTask];
+        setAllTasks(updatedTasks);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+        setTaskTitle('');
+    }
 
     const handleCreateTask = () => {
         setShowInput(true);
@@ -16,7 +28,7 @@ const CreateTaskBtn = ({onAddTask, taskTitle, setTaskTitle}) => {
 
     const handleConfirmTask = () => {
         console.log('Ny uppgift skapad:', taskTitle);
-        onAddTask(taskTitle);
+        addTask(taskTitle);
         setShowInput(false);
     }
 
