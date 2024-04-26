@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import CreateTaskBtn from './CreateTaskBtn.jsx';
 import Tasks from './Tasks.jsx';
+import { Link } from 'react-router-dom';
 
 
 const Columns = ({title, index, allTasks, setAllTasks, onDragOver, onDrop, onDragStart, columnTasks}) => {
@@ -20,8 +21,8 @@ const dltTask = (taskId) => {
           onDragOver={(e) => onDragOver(e)}
           onDrop={(e) => onDrop(e, title)}
       >
-          <h2 className='ToDo'>{title}</h2>
-          <Tasks columnTasks={columnTasks} dltTask={dltTask} onDragStart={onDragStart}/>
+          <Link to='/doing'><h2 className='ToDo'>{title}</h2></Link> 
+          <Tasks columnTasks={columnTasks} onDragStart={onDragStart} dltTask={dltTask}/>
           <CreateTaskBtn setAllTasks={setAllTasks} allTasks={allTasks} />
     </div>
   )

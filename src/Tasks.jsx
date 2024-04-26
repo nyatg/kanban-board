@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Columns from './Columns';
+import TaskContext from './TaskContext';
 
-const Tasks = ({columnTasks, dltTask, onDragStart}) => {
+
+const Tasks = ({ columnTasks, onDragStart, dltTask}) => {
+    
     return (
         <div className='Tasks'>
             {columnTasks.map((task) => (
