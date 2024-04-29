@@ -9,7 +9,7 @@ const ColumnPage = ({ title, index, allTasks, setAllTasks, onDragOver, onDrop, o
             onDragOver={(e) => onDragOver(e)}
             onDrop={(e) => onDrop(e, title)}
         >
-            <h2 className='ToDo'>{title}</h2>
+            <h2 className='Columns-header'>{title}</h2>
             <Tasks columnTasks={columnTasks} dltTask={dltTask} onDragStart={onDragStart} />
             <CreateTaskBtn setAllTasks={setAllTasks} allTasks={allTasks} />
         </div>

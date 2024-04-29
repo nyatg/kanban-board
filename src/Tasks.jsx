@@ -15,7 +15,7 @@ const Tasks = ({ columnTasks, onDragStart, dltTask}) => {
                 >
                     <h3>{task.task}</h3>
                     <p className='datePara'>{new Date().toLocaleDateString()}</p>
-                    <button onClick={() => dltTask(task.id)}>Delete task</button>
+                    <button className='delete-btn' onClick={() => dltTask(task.id)}>Delete task</button>
                 </div>
             ))}
           

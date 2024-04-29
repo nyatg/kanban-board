@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import CreateTaskBtn from './CreateTaskBtn.jsx';
 import Tasks from './Tasks.jsx';
 import { Link } from 'react-router-dom';
+import './index.css'
 
 
 const Columns = ({title, index, allTasks, setAllTasks, onDragOver, onDrop, onDragStart, columnTasks}) => {
@@ -21,9 +22,9 @@ const dltTask = (taskId) => {
           onDragOver={(e) => onDragOver(e)}
           onDrop={(e) => onDrop(e, title)}
       >
-          <Link to='/doing'><h2 className='ToDo'>{title}</h2></Link> 
+          <Link to='/doing'><h2 className='Columns-header'>{title}</h2></Link> 
           <Tasks columnTasks={columnTasks} onDragStart={onDragStart} dltTask={dltTask}/>
-          <CreateTaskBtn setAllTasks={setAllTasks} allTasks={allTasks} />
+          {title === 'To do' ?<CreateTaskBtn setAllTasks={setAllTasks} allTasks={allTasks} /> : null}
     </div>
   )
 }

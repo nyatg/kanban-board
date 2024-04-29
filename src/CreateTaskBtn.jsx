@@ -34,11 +34,11 @@ const CreateTaskBtn = ({ setAllTasks, allTasks}) => {
 
   return (
       <div>
-          {!showInput && <button onClick={handleCreateTask}>Create new task</button>}
+          {!showInput && <button className='create-btn' onClick={handleCreateTask}>Create new task</button>}
           {showInput && (
               <div>
                   <input type="text" value={taskTitle} onChange={handleInputChange} placeholder="What's the mission?" id='inputTask' />
-                  <button onClick={handleConfirmTask}>Confirm</button>
+                  <button className='confirm-btn' onClick={handleConfirmTask}>Confirm</button>
               </div>
           )}
     </div>

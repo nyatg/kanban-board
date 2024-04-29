@@ -16,13 +16,15 @@ body {
   height: 100vh;
   width: 100%;
   margin: auto; 
-  background-color: rgb(227, 227, 219);
+  background-color: rgb(226, 212, 238)
 }
 
 header {
 width: 100%;
 color: rgb(204, 210, 215);
-background-color: rgb(70, 70, 70);
+background-color: rgb(125, 68, 211);
+display: flex;
+flex-direction: column;
 }
 
 main {
@@ -31,25 +33,57 @@ main {
 
 .Columns{
   margin-top: 2rem;
-  border: solid 1px;
+  border: solid 1px rgb(125, 68, 211);
+  border-radius: 10px;
   flex: 1;
-  height: 80vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 .Tasks {
-  border: solid 10px green;
   height: 80vh;
-  overflow: scroll;
+  overflow: scroll; 
 }
 
 .singleTask {
-  border: solid;
-  width: 30vw;
+  border: solid 4px rgb(125, 68, 211);
+  background-color: rgb(142, 97, 209);
+  border-radius: 12px;
+  width: 90%;
   padding: 10px;
+  color: rgb(235, 239, 242);
+  margin: auto;
 }
 
 .datePara{
-  color: rgb(151, 147, 147);
+  color: rgb(204, 210, 215);
+}
+
+.create-btn, .confirm-btn, .delete-btn{
+    border: solid 2px rgb(125, 68, 211);
+  border-radius: 10px;
+  padding: 3px;
+  background-color: rgb(226, 212, 238) ;
+  color: rgb(125, 68, 211); ;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav > a, nav a:visited {
+  color: rgb(211, 189, 189);
+  text-decoration: none;
+}
+
+.Columns-header{
+  text-decoration: none;
+  color: rgb(125, 68, 211);
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
 }

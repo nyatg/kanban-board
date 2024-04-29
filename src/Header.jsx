@@ -10,16 +10,16 @@ const Header = () => {
       <h1>{headerTitle}</h1>
       <nav>
         <NavLink to='/'>
-          home
+          Home
         </NavLink>
         <NavLink to='/todo'>
-          todo
+          To do
         </NavLink>
         <NavLink to='/doing'>
-          doing
+          Doing
         </NavLink>
         <NavLink to='/done'>
-          done
+          Done
         </NavLink>
       </nav>
       </header>
