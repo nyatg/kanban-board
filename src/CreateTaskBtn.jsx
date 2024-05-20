@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import TaskContext from "./TaskContext";
 
-const CreateTaskBtn = ({ setAllTasks, allTasks}) => {
+const CreateTaskBtn = () => {
     const [taskTitle, setTaskTitle] = useState('');
     const [showInput, setShowInput] = useState(false);
+    const { allTasks, setAllTasks } = useContext(TaskContext);
   
     const addTask = (task) => {
         console.log(task);

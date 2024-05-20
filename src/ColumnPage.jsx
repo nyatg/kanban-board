@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CreateTaskBtn from './CreateTaskBtn';
 import Tasks from './Tasks';
+import TaskContext from './TaskContext';
 
-const ColumnPage = ({ title, index, allTasks, setAllTasks, onDragOver, onDrop, onDragStart, columnTasks, dltTask }) => {
+const ColumnPage = ({ title, index}) => {
+    const {handleDrop} = useContext(TaskContext)
     return (
         <div
             className='Columns'
-            onDragOver={(e) => onDragOver(e)}
-            onDrop={(e) => onDrop(e, title)}
+            onDragOver={(e) =>e.preventDefault()}
+            onDrop={(e) => handleDrop(e, title)}
         >
             <h2 className='Columns-header'>{title}</h2>
-            <Tasks columnTasks={columnTasks} dltTask={dltTask} onDragStart={onDragStart} />
-            <CreateTaskBtn setAllTasks={setAllTasks} allTasks={allTasks} />
+            <Tasks columnId={index} />
+            {/* <CreateTaskBtn /> gör så man ba kan se den i den första kolumnen*/}
         </div>
   )
 }

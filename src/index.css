@@ -48,6 +48,15 @@ main {
   overflow: scroll; 
 }
 
+/* 
+border: 'solid 4px rgb(125, 68, 211)',
+backgroundColor: 'rgb(142, 97, 209)',
+borderRadius: '12px',
+padding: '10px',
+color: 'rgb(235, 239, 242)',
+margin: 'auto'
+*/
+
 .singleTask {
   border: solid 4px rgb(125, 68, 211);
   background-color: rgb(142, 97, 209);
@@ -67,7 +76,7 @@ main {
   border-radius: 10px;
   padding: 3px;
   background-color: rgb(226, 212, 238) ;
-  color: rgb(125, 68, 211); ;
+  color: rgb(125, 68, 211); 
 }
 
 nav {

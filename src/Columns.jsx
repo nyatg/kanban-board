@@ -1,30 +1,24 @@
-import {useState, useEffect} from 'react'
+import { useContext} from 'react'
 import CreateTaskBtn from './CreateTaskBtn.jsx';
 import Tasks from './Tasks.jsx';
 import { Link } from 'react-router-dom';
 import './index.css'
+import TaskContext from './TaskContext.jsx';
 
 
-const Columns = ({title, index, allTasks, setAllTasks, onDragOver, onDrop, onDragStart, columnTasks}) => {
-    
+const Columns = ({title, index}) => {
+    const {handleDrop} = useContext(TaskContext)
 
-const dltTask = (taskId) => {
-        const updatedTasks = allTasks.filter(task => task.id !== taskId);
 
-        setAllTasks(updatedTasks);
-
-       localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-}
-    
   return (
       <div
           className='Columns'
-          onDragOver={(e) => onDragOver(e)}
-          onDrop={(e) => onDrop(e, title)}
+          onDragOver={(e) => e.preventDefault()}
+          onDrop={(e) => handleDrop(e, index)}
       >
           <Link to='/doing'><h2 className='Columns-header'>{title}</h2></Link> 
-          <Tasks columnTasks={columnTasks} onDragStart={onDragStart} dltTask={dltTask}/>
-          {title === 'To do' ?<CreateTaskBtn setAllTasks={setAllTasks} allTasks={allTasks} /> : null}
+      <Tasks columnId={index} />
+          {title === 'To do' ?<CreateTaskBtn/> : null}
     </div>
   )
 }
